@@ -4,15 +4,58 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
-      };
+		  
+		  function generateEmail(messages){
+			for (var i = 0; i<messages.length; i++) {
+			console.log(messages[i]);
+			console.log(messages[i].sender);
+			console.log(messages[i].subject);
+			console.log(messages[i].date);
+			console.log(messages[i].body);
+			
+			var emailElement = document.createElement("div");
+			emailElement.className = "email";
+			document.getElementById("main").appendChild(emailElement);
+			
+			var senderElement = document.createElement("div");
+			senderElement.className = "sender";
+			senderElement.innerHTML = messages[i].sender;
+			emailElement.appendChild(senderElement);
+
+			var subjectElement = document.createElement("div");
+			subjectElement.className = "subject";
+			subjectElement.innerHTML = messages[i].subject;
+			emailElement.appendChild(subjectElement);
+
+			var dateElement = document.createElement("div");
+			dateElement.className = "date";
+			dateElement.innerHTML = messages[i].date;
+			emailElement.appendChild(dateElement);
+
+			var bodyElement = document.createElement("div");
+			bodyElement.className = "body";
+			bodyElement.innerHTML = messages[i].body;
+			emailElement.appendChild(bodyElement);
+
+			
+			
+			}
+		  }
+		  
+	  generateEmail(geemails);
+	  }
+
+  
     </script>
+    
+        
+    
 	</head>
 	<body>
+        
 		<div class="container" id="main">
-			Build Me!
-		</div>
+        	<h1 id="name">GeeMail</h1>
+        </div>
+
 	</body>
 </html>
